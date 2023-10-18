@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> IITJ Chronicle Login</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="styleloginandreg.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Welcome to IITJ Chronicle</strong> </h1>
+                            <div class="description">
+                            	<h3><p>
+	                            	A Website for campus event management
+                            	</p></h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Login to our site</h3>
+	                            		<p>Enter username and password to log on:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-key"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="" method="post" class="login-form">
+				                    	<!-- <div class="form-group">
+				                    		<label class="sr-only" for="form-username"></label>
+				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+				                        </div> -->
+										<div class="form-group">
+											<label class="sr-only" for="email">Email</label>
+											<input type="text" name="login_email" id="login_email" class="form-control" placeholder="Enter your email">
+										  </div>
+				                        <!-- <div class="form-group">
+				                        	<label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" name="login_password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        </div>
+				                        <button type="submit" class="btn">Sign in!</button> -->
+										<div class="form-group">
+											<label class="sr-only" for="password">Password</label>
+											<input type="password" name="login_password" id="login_password" class="form-control"  placeholder="Enter your password">
+										  </div>
+										<button type="button" id="login" name="login" class="btn btn-success">Login</button>
+				                    </form>
+			                    </div>
+		                    </div>
+		                
+		                	<div class="social-login">
+	                        	<h3>...or login with:</h3>
+	                        	<div class="social-login-buttons">
+		                        	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+		                        		<i class="fa fa-facebook"></i> Facebook
+		                        	</a>
+		                        	<a class="btn btn-link-1 btn-link-1-twitter" href="#">
+		                        		<i class="fa fa-twitter"></i> Twitter
+		                        	</a>
+		                        	<a id = "logingoogle" class="btn btn-link-1 btn-link-1-google-plus" href="#">
+		                        		<i class="fa fa-google " id = "logingoogle" ></i> Google 
+		                        	</a>
+	                        	</div>
+	                        </div>
+	                        
+                        </div>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Sign up now</h3>
+	                            		<p>Fill in the form below to get instant access:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-pencil"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="" method="post" class="registration-form">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-first-name">First name</label>
+				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Last name</label>
+				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        </div>
+				                        <!-- <div class="form-group">
+				                        	<label class="sr-only" for="form-email">Email</label>
+				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        </div> -->
+										<!-- <div class="form-group">
+				                        	<label class="sr-only" for="form-email">Password</label>
+				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        </div> -->
+										<!-- <div class="form-group">
+											<label class="sr-only" for="password">Password</label>
+											<input type="password" name="login_password" id="login_password" class="form-control"  placeholder="Enter your password">
+										  </div> -->
+				                        <!-- <div class="form-group">
+				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
+				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
+				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+				                        </div> -->
+				                        <!-- <button type="submit" class="btn">Sign me up!</button> -->
+										<div class="form-group">
+											<label class="sr-only" for="email">Email</label>
+											<input type="text" name="email" id="email" class="form-control" placeholder="Enter your email">
+										  </div>
+										  
+										<div class="form-group">
+											<label class="sr-only" for="password" >Password</label>
+											<input type="password" name="password" id="password" class="form-control"  placeholder="Enter your password">
+										  </div>
+										<button type="button" id="register" name="register" class="btn btn-success">Register Now</button>
+				                    </form>
+			                    </div>
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+        		<div class="row">
+        			
+        			<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>Made by TBlossom</p>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+        <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "981db12f38b2c6f2c18bb5070619c3376b8219f7cf33d706b04659c453c049f189cd90974bff23db427cbcd8d1012e63", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
+    </body>
+
+
+	<!-- <script type="module">
+
+        
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+		import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+  
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		  apiKey: "AIzaSyDVM0cpiAUR3VVF7VeDzc95nn3wIEGyJq8",
+		  authDomain: "iitj-chroniclw.firebaseapp.com",
+		  projectId: "iitj-chroniclw",
+		  storageBucket: "iitj-chroniclw.appspot.com",
+		  messagingSenderId: "186100887368",
+		  appId: "1:186100887368:web:c26108d4a20d60d13e4d7d",
+		  measurementId: "G-SFCZKTZTP0"
+	  };
+  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const auth = getAuth();
+		console.log(app);
+  
+		
+  
+		//----- New Registration code start	  
+		document.getElementById("register").addEventListener("click", function() {
+			var email =  document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			//For new registration
+			createUserWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+			  // Signed in 
+			  const user = userCredential.user;
+			  console.log(user);
+			  alert("Registration successfully!!");
+			  // ...
+			})
+			.catch((error) => {
+			  const errorCode = error.code;
+			  const errorMessage = error.message;
+			  // ..
+			  console.log(errorMessage);
+			  alert(error);
+			});		  		  
+		});
+		
+		document.getElementById("login").addEventListener("click", function() {
+		var email = document.getElementById("login_email").value;
+		var password = document.getElementById("login_password").value;
+
+		signInWithEmailAndPassword(auth, email, password)
+		.then((userCredential) => {
+		 
+			const user = userCredential.user;
+			console.log(user);
+
+			var logoutElement = document.getElementById('logout');
+			if (logoutElement) {
+			logoutElement.style.display = 'block';
+			}
+
+			// Redirect to index.html
+			window.location.href = 'index.html';
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			console.log(errorMessage);
+			alert(errorMessage);
+		});
+		});
+
+
+		//----- End
+  
+		//----- Logout code start	  
+		document.getElementById("logout").addEventListener("click", function() {
+			signOut(auth).then(() => {
+				// Sign-out successful.
+				console.log('Sign-out successful.');
+				alert('Sign-out successful.');
+				document.getElementById('logout').style.display = 'none';
+			  }).catch((error) => {
+				// An error happened.
+				console.log('An error happened.');
+			  });		  		  
+		});
+logingoogle.addEventListener('click',(e) => {
+
+signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+
+
+    alert(user.displayName);
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+
+    alert(errorMessage);
+  });
+ });
+
+  signOut.addEventListener('click',(e) => {
+
+   signOut(auth).then(() => {
+    // Sign-out successful.
+   }).catch((error) => {
+    // An error happened.
+   });
+});
+
+	  </script> -->
+
+	  <script type="module">
+		import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js'; // import initializeApp from Firebase App
+		import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js'; // import getAnalytics from Firebase Analytics
+		import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js'; // import auth functions from Firebase Auth
+		import { GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js'; // import GoogleAuthProvider and signInWithPopup from Firebase Auth
+	  
+		const firebaseConfig = {
+		  apiKey: "AIzaSyDVM0cpiAUR3VVF7VeDzc95nn3wIEGyJq8",
+		  authDomain: "iitj-chroniclw.firebaseapp.com",
+		  projectId: "iitj-chroniclw",
+		  storageBucket: "iitj-chroniclw.appspot.com",
+		  messagingSenderId: "186100887368",
+		  appId: "1:186100887368:web:c26108d4a20d60d13e4d7d",
+		  measurementId: "G-SFCZKTZTP0"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const auth = getAuth();
+	  
+		document.getElementById("register").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+		  var password = document.getElementById("password").value;
+		  createUserWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+			  const user = userCredential.user;
+			  console.log(user);
+			  alert("Registration successful!!");
+			})
+			.catch((error) => {
+			  const errorCode = error.code;
+			  const errorMessage = error.message;
+			  console.log(errorMessage);
+			  alert(errorMessage);
+			});
+		});
+	  
+		document.getElementById("login").addEventListener("click", function() {
+		  var email = document.getElementById("login_email").value;
+		  var password = document.getElementById("login_password").value;
+	  
+		  signInWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+			  const user = userCredential.user;
+			  console.log(user);
+			  var logoutElement = document.getElementById('logout');
+			  if (logoutElement) {
+				logoutElement.style.display = 'block';
+			  }
+			  window.location.href = 'index.html';
+			})
+			.catch((error) => {
+			  const errorCode = error.code;
+			  const errorMessage = error.message;
+			  console.log(errorMessage);
+			  alert(errorMessage);
+			});
+		});
+	  
+		document.getElementById("logout").addEventListener("click", function() {
+		  signOut(auth).then(() => {
+			console.log('Sign-out successful.');
+			alert('Sign-out successful.');
+			document.getElementById('logout').style.display = 'none';
+		  }).catch((error) => {
+			console.log('An error happened.');
+		  });
+		});
+	  
+		document.getElementById("logingoogle").addEventListener("click", function() {
+		  const provider = new GoogleAuthProvider();
+		  signInWithPopup(auth, provider)
+			.then((result) => {
+			  const credential = GoogleAuthProvider.credentialFromResult(result);
+			  const token = credential.accessToken;
+			  const user = result.user;
+			  alert(`Hello ${user.displayName}!`);
+			}).catch((error) => {
+			  const errorCode = error.code;
+			  const errorMessage = error.message;
+			  const email = error.email;
+			  const credential = GoogleAuthProvider.credentialFromError(error);
+			  console.log(errorMessage);
+			  alert(errorMessage);
+			});
+		});
+	  </script>
+	  
+	  
+
+</html>

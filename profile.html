@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="profile.css">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="iitj-chronicle">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h3>Welcome to IITJ Chronicle</h3>
+		<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Curabitur et est sed felis aliquet sollicitudin</p> -->
+		<span>
+			<p>login with social media</p>
+			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <!-- <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> </a> -->
+            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+		</span>
+        <span>
+			<!-- <p>login with email</p>
+			<a href="#"><i class="fa fa-google" aria-hidden="true"></i></a> -->
+		</span>
+		</div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<p>Don't have an account? <a href="createnew.html">Creat Your Account</a> it takes less than a minute</p>
+		<div class="inputs">
+			<input type="text" placeholder="user name">
+			<br>
+			<input type="password" placeholder="password">
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			<p>forget password?</p>
+		</div>
+			
+			<br>
+			<button><a href="index.html">Login</div></button>
+	</div>
+	
+</div>
+<!-- partial -->
+  
+</body>
+
+<script type="module">
+
+        
+	// Import the functions you need from the SDKs you need
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+	import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+	import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+	  apiKey: "AIzaSyDVM0cpiAUR3VVF7VeDzc95nn3wIEGyJq8",
+	  authDomain: "iitj-chroniclw.firebaseapp.com",
+	  projectId: "iitj-chroniclw",
+	  storageBucket: "iitj-chroniclw.appspot.com",
+	  messagingSenderId: "186100887368",
+	  appId: "1:186100887368:web:c26108d4a20d60d13e4d7d",
+	  measurementId: "G-SFCZKTZTP0"
+  };
+
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const analytics = getAnalytics(app);
+	const auth = getAuth();
+	console.log(app);
+
+	
+
+	//----- New Registration code start	  
+	// document.getElementById("register").addEventListener("click", function() {
+	// 	var email =  document.getElementById("email").value;
+	// 	var password = document.getElementById("password").value;
+	// 	//For new registration
+	// 	createUserWithEmailAndPassword(auth, email, password)
+	// 	.then((userCredential) => {
+	// 	  // Signed in 
+	// 	  const user = userCredential.user;
+	// 	  console.log(user);
+	// 	  alert("Registration successfully!!");
+	// 	  // ...
+	// 	})
+	// 	.catch((error) => {
+	// 	  const errorCode = error.code;
+	// 	  const errorMessage = error.message;
+	// 	  // ..
+	// 	  console.log(errorMessage);
+	// 	  alert(error);
+	// 	});		  		  
+	// });
+	//----- End
+
+	//----- Login code start	  
+	document.getElementById("login").addEventListener("click", function() {
+		var email =  document.getElementById("login_email").value;
+		var password = document.getElementById("login_password").value;
+
+		signInWithEmailAndPassword(auth, email, password)
+		.then((userCredential) => {
+		  // Signed in 
+		  const user = userCredential.user;
+		  console.log(user);
+		  alert(user.email+" Login successfully!!!");
+		  document.getElementById('logout').style.display = 'block';
+		  // ...
+		})
+		.catch((error) => {
+		  const errorCode = error.code;
+		  const errorMessage = error.message;
+		  console.log(errorMessage);
+		  alert(errorMessage);
+		});		  		  
+	});
+	//----- End
+
+	//----- Logout code start	  
+	document.getElementById("logout").addEventListener("click", function() {
+		signOut(auth).then(() => {
+			// Sign-out successful.
+			console.log('Sign-out successful.');
+			alert('Sign-out successful.');
+			document.getElementById('logout').style.display = 'none';
+		  }).catch((error) => {
+			// An error happened.
+			console.log('An error happened.');
+		  });		  		  
+	});
+	//----- End
+
+  </script>
+</html>

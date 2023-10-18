@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>Google Authentication </title>
+<link rel="stylesheet" href="cssFile.css">
+</head>
+
+<body>
+  
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    
+    <input type="text" id="email" name="email" placeholder="E-mail" />
+    <input type="password" id="password" name="password" placeholder="Password" />
+    
+    <input type="submit" id="saveData" name="signup_submit" value="Sign in" />
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google" id='login'>Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+  import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDVM0cpiAUR3VVF7VeDzc95nn3wIEGyJq8",
+	authDomain: "iitj-chroniclw.firebaseapp.com",
+	projectId: "iitj-chroniclw",
+	storageBucket: "iitj-chroniclw.appspot.com",
+	messagingSenderId: "186100887368",
+	appId: "1:186100887368:web:c26108d4a20d60d13e4d7d",
+	measurementId: "G-SFCZKTZTP0"
+  // your config code
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider(auth);
+
+ login.addEventListener('click',(e) => {
+   
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+
+
+    alert(user.displayName);
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+
+    alert(errorMessage);
+  });
+ });
+
+  signOut.addEventListener('click',(e) => {
+
+   signOut(auth).then(() => {
+    // Sign-out successful.
+   }).catch((error) => {
+    // An error happened.
+   });
+
+  });
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDVM0cpiAUR3VVF7VeDzc95nn3wIEGyJq8",
+  authDomain: "iitj-chroniclw.firebaseapp.com",
+  projectId: "iitj-chroniclw",
+  storageBucket: "iitj-chroniclw.appspot.com",
+  messagingSenderId: "186100887368",
+  appId: "1:186100887368:web:c26108d4a20d60d13e4d7d",
+  measurementId: "G-SFCZKTZTP0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth();
+const provider = new GoogleAuthProvider(app);
+
+console.log(app);
+
+
+
+document.getElementById("register").addEventListener("click", function() {
+    var email =  document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    //For new registration
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user);
+      alert("Registration successfully!!");
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      console.log(errorMessage);
+      alert(error);
+    });		  		  
+});
+
+document.getElementById("login").addEventListener("click", function() {
+var email = document.getElementById("login_email").value;
+var password = document.getElementById("login_password").value;
+
+signInWithEmailAndPassword(auth, email, password)
+.then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    // alert(user.email + " Login successfully!!!");
+
+    // Check if the logout element exists before setting its style
+    var logoutElement = document.getElementById('logout');
+    if (logoutElement) {
+    logoutElement.style.display = 'block';
+    }
+
+    // Redirect to index.html
+    window.location.href = 'index.html';
+})
+.catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage);
+    alert(errorMessage);
+});
+});
+
+
+//----- End
+
+//----- Logout code start	  
+document.getElementById("logout").addEventListener("click", function() {
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('Sign-out successful.');
+        alert('Sign-out successful.');
+        document.getElementById('logout').style.display = 'none';
+      }).catch((error) => {
+        // An error happened.
+        console.log('An error happened.');
+      });		  		  
+});
